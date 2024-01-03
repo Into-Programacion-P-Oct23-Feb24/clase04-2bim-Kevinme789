@@ -12,17 +12,55 @@ package ejemplos02;
 public class Ejemplo041 {
 
     public static void main(String[] args) {
+        int arreglo1[][] = {{1, 2, 3}, {3, 2, 4}, {2, 6, 2}};
+        int arreglo2[][] = {{1, 2, 3}, {2, 2, 2}, {3, 1, 2}};
+        int[][] arreglo3 = new int[3][3];
         // 
-        obtenerMultiplicacion(primerValor, segundoValor); 
-        
+        for (int f = 0; f < arreglo1.length; f++) {
+            for (int c = 0; c < arreglo1.length; c++) {
+                int primerValor = arreglo1[f][c];
+                int segundoValor = arreglo2[f][c];
+                arreglo3[f][c] = obtenerMultiplicacion(primerValor, 
+                        segundoValor);
+
+            }
+        }
+        for (int f = 0; f < arreglo1.length; f++) {
+            String cadena = "";
+            for (int c = 0; c < arreglo1.length; c++) {
+
+                cadena = String.format("%s%d ", cadena, 
+                        arreglo1[f][c]);
+            }
+            System.out.printf(cadena + "\n");
+        }
+        System.out.printf("\n");
+        for (int f = 0; f < arreglo1.length; f++) {
+            String cadena = "";
+            for (int c = 0; c < arreglo1.length; c++) {
+
+                cadena = String.format("%s%d ", cadena, 
+                        arreglo2[f][c]);
+            }
+            System.out.printf(cadena + "\n");
+        }
+        System.out.printf("\n");
+        for (int f = 0; f < arreglo1.length; f++) {
+            String cadena = "";
+            for (int c = 0; c < arreglo1.length; c++) {
+
+                cadena = String.format("%s%d ", cadena,
+                        arreglo3[f][c]);
+            }
+            System.out.printf(cadena + "\n");
+        }
     }
-        
-    public static void obtenerSuma(int a, int b){
-        int suma;
-        suma = a + b;
-        System.out.printf("El valor de la suma es: %d\n", suma);
-        
+
+    public static int obtenerMultiplicacion(int a, int b) {
+        int operacion;
+        operacion = a * b;
+        return operacion;
+
     }
-    
-    
+
 }
